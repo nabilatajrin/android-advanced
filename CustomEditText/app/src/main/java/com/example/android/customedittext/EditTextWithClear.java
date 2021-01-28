@@ -35,29 +35,24 @@ public class EditTextWithClear
         extends android.support.v7.widget.AppCompatEditText {
 
     Drawable mClearButtonImage;
-
     public EditTextWithClear(Context context) {
         super(context);
         init();
     }
-
     public EditTextWithClear(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
-
     public EditTextWithClear(Context context,
                              AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
-
     private void init() {
         // Initialize Drawable member variable.
         mClearButtonImage =
                 ResourcesCompat.getDrawable(getResources(),
                         R.drawable.ic_clear_opaque_24dp, null);
-
         // If the X (clear) button is tapped, clear the text.
         setOnTouchListener(new OnTouchListener() {
             @Override
@@ -117,7 +112,6 @@ public class EditTextWithClear
                 return false;
             }
         });
-
         // If the text changes, show or hide the X (clear) button.
         addTextChangedListener(new TextWatcher() {
             @Override
@@ -125,24 +119,20 @@ public class EditTextWithClear
                                           int start, int count, int after) {
                 // Do nothing.
             }
-
             @Override
             public void onTextChanged(CharSequence s,
                                       int start, int before, int count) {
                 showClearButton();
             }
-
             @Override
             public void afterTextChanged(Editable s) {
                 // Do nothing.
             }
         });
     }
-
     /**
      * Shows the clear (X) button.
      */
-
     private void showClearButton() {
         // Sets the Drawables (if any) to appear to the left of,
         // above, to the right of, and below the text.
@@ -152,7 +142,6 @@ public class EditTextWithClear
                         mClearButtonImage,  // End of text.
                         null);              // Below text.
     }
-
     /**
      * Hides the clear button.
      */
